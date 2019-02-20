@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nikolaswise/cooking-papa/issues"
   },
-  "homepage": "https://github.com/nikolaswise/cooking-papa#readme"
+  "homepage": "https://github.com/nikolaswise/cooking-papa#readme",
+  "dependencies": {
+    "static-site": "^1.3.4"
+  }
 }
