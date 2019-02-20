@@ -21,6 +21,4 @@ const get = async () => {
 
 const data = await get()
 
-
-
 export default render(template, data)
