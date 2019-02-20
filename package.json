@@ -1,0 +1,19 @@
+{
+  "name": "cooking-papa",
+  "version": "1.0.0",
+  "description": "`/data` `/data/recipes` `/recipes`",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolaswise/cooking-papa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikolaswise/cooking-papa/issues"
+  },
+  "homepage": "https://github.com/nikolaswise/cooking-papa#readme"
+}
