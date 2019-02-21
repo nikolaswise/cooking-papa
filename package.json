@@ -4,7 +4,13 @@
   "description": "`/data` `/data/recipes` `/recipes`",
   "main": "app.js",
   "scripts": {
+    "build": "static-site",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "static-site": {
+    "source": "source",
+    "build": "recipes",
+    "helpers": ["bin/recipes.js"]
   },
   "repository": {
     "type": "git",

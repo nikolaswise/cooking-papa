@@ -1,0 +1,20 @@
+---
+title: Radichio Coleslaw
+ingredients:
+  - radichio
+  - Red Cabbage
+  - Walnuts
+  - Mayonaise
+  - Lemon
+  - Garlic
+  - Parmesan
+  - Mustard
+  - Soy Sauce
+  - Fish Sauce
+  - Umeboshi
+steps:
+  - Slice and mix Radichio and Cabbage, top with sliced walnuts.
+  - Mix lemon juice and parmesan.
+  - Smash garlic, add with mayonaise to sauce.
+  - Add remaining ingredients to sauce to taste.
+---
