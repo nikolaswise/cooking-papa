@@ -10,7 +10,7 @@
   "static-site": {
     "source": "source",
     "build": "recipes",
-    "helpers": ["bin/recipes.js"]
+    "helpers": ["bin/recipes.js", "bin/routes.js"]
   },
   "repository": {
     "type": "git",
