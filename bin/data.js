@@ -8,7 +8,7 @@ const fsErr = (err) => {
 }
 
 const writeData = (recipe) => {
-  fs.writeFile(`${path}/data/recipes/${recipe.slug}.json`, JSON.stringify(recipe), fsErr)
+  fs.writeFile(`${path}/data${recipe.slug}.json`, JSON.stringify(recipe), fsErr)
 }
 
 const writeIndexData = (recipes) => {
@@ -19,7 +19,7 @@ const recipeData = (site) => {
   let recipes = site.map(page => {
     return {
       "title": page.title,
-      "slug": page.url.replace(/\//g, ''),
+      "slug": page.url.substring(0, page.url.length - 1),
       "ingredients": page.ingredients,
       "steps": page.steps
     }
