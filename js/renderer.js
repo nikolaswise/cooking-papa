@@ -1,14 +1,20 @@
-const setCache = (pathname, html) => sessionStorage.setItem(pathname, html)
-const getCache = (pathname) => sessionStorage.getItem(pathname)
+const render = async (template, url, obj) => {
+  // console.log(template, url)
+  const get = async () => {
+    if (fetch) {
+      const response = await fetch(url)
+      const json = await response.json()
+      return json
+    } else {
 
-// const render = async () => {
-//   let html = getCache()
-//   html ?
-//   const response = await fetch(`/data/index.json`)
-//   const json = await response.json()
-// }
-
-
-const render = (template, data) => template(data)
+    }
+  }
+  let data
+  obj
+    ? data = obj
+    : data = await get()
+  return template(data)
+  // return obj
+}
 
 export default render

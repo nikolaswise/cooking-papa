@@ -1,14 +1,3 @@
-import render from '../../js/renderer'
-
-const get = async () => {
-  let slug = window.location.pathname.split('/')[2]
-  const response = await fetch(`/data/recipes/${slug}.json`)
-  const json = await response.json()
-  return json
-}
-
-const data = await get()
-
 const template = (object) => (`
 <h1>${object.title}</h1>
 <h2>Ingredients</h2>
@@ -21,4 +10,16 @@ const template = (object) => (`
 </ol>
 `)
 
-export default render(template, data)
+const data = (slug, root = '/') => async () => {
+  console.log('rendering!', `${root}data/recipes/${slug}.json`)
+  const response = await fetch(`${root}data/recipes/${slug}.json`)
+  const obj = await response.json()
+  return obj
+}
+
+const render = async (slug, root) => {
+  let obj = await data(slug, root)()
+  return template(obj)
+}
+
+export default render

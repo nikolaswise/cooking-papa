@@ -13,12 +13,4 @@ const template = (array) => (`
 </ul>
 `)
 
-const get = async () => {
-  const response = await fetch(`/data/index.json`)
-  const json = await response.json()
-  return json
-}
-
-const data = await get()
-
-export default render(template, data)
+export default render(template, `/data/index.json`)
