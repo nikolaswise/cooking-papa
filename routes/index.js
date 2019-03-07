@@ -1,5 +1,3 @@
-import render from '../js/renderer'
-
 const item = (object) => (`
 <li>
   <a href="/${object.slug}">${object.title}</a>
@@ -13,4 +11,14 @@ const template = (array) => (`
 </ul>
 `)
 
-export default render(template, `/data/index.json`)
+const data = (root = '/') => async () => {
+  console.log('rendering!', `${root}data/index.json`)
+  const response = await fetch(`${root}data/index.json`)
+  const obj = await response.json()
+  return obj
+}
+
+export const main = async (root = '/') => {
+  let obj = await data(root)()
+  return template(obj)
+}

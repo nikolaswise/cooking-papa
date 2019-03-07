@@ -2,28 +2,31 @@ require = require("esm")(module)
 require('isomorphic-fetch')
 const fs = require('fs')
 const path = process.cwd()
+const layout = require('../layouts/layout.js')
 
 const render = async (page) => {
-  console.debug(`dis page:`, page.url)
   let index = `${path}/routes${page.url}index.js`
   let single = `${path}/routes${page.url.substring(0, page.url.length -1)}.js`
   let slug = `${path}/routes${page.url.split('/').slice(0,-2).join('/')}/:slug.js`
 
   try {
     if (fs.existsSync(`${index}`)) {
-      // template = require(`${index}`)
-      // template('index.js')
+      let indexTemplate = require(`${index}`)
+      let indexMain = await indexTemplate.main(`http://localhost:5000/`)
+      page.content = layout.default(indexMain)
     }
-    if (fs.existsSync(`${single}`)) {
-      // template = require(`${single}`)
+    // Implement this later when I have one
+    // if (fs.existsSync(`${single}`)) {
+      // let rootTemplate = require(`${single}`)
       // let id = page.url.substring(0, page.url.length -1)
       // template(id)
-    }
+    // }
     if (fs.existsSync(`${slug}`)) {
       let id = page.url.split('/').slice(0,-1).pop()
-      let template = require(`${slug}`)
-      let content = await template.default(id, `http://localhost:5000/`)
-      page.content = content
+      let slugTemplate = require(`${slug}`)
+      let slugMain = await slugTemplate.main(id, `http://localhost:5000/`)
+      page.content = layout.default(slugMain)
+
     }
   } catch(err) {
     console.error(err)
@@ -38,7 +41,6 @@ module.exports = function (site, cb) {
   })
   Promise.all(buildSite)
     .then((newSite) => {
-      console.log(newSite)
       cb(null, newSite)
     })
     .catch((err) => new Error(err))

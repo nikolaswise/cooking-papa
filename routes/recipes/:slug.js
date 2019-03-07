@@ -17,9 +17,7 @@ const data = (slug, root = '/') => async () => {
   return obj
 }
 
-const render = async (slug, root) => {
+export const main = async (slug, root = '/') => {
   let obj = await data(slug, root)()
   return template(obj)
 }
-
-export default render

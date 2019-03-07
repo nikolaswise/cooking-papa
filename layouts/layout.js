@@ -1,6 +1,6 @@
 import nav from '../components/nav.js'
 
-export default `
+export default (main) => `
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,7 +10,9 @@ export default `
   </head>
   <body>
     ${nav}
-    <section class="region-main"></section>
+    <section class="region-main">
+      ${main}
+    </section>
     <section class="region-foot"></section>
     <script src="/js/app.js" type="module"></script>
   </body>

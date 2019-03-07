@@ -12,7 +12,7 @@
   },
   "static-site": {
     "source": "source",
-    "build": "recipes",
+    "build": "./",
     "helpers": [
       "bin/data.js",
       "bin/routes.js"
