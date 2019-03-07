@@ -1,11 +1,13 @@
 const item = (object) => (`
 <li>
-  <a href="/${object.slug}">${object.title}</a>
+  <a href="${object.slug}">${object.title}</a>
 </li>
 `)
 
 const template = (array) => (`
 <h1>Cooking Papa</h1>
+<h2>Not A Food Blog</h2>
+<a class="js-ex" href="#"> Delegated Listener </a>
 <ul>
   ${array.map(item)}
 </ul>
