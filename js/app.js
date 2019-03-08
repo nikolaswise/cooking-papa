@@ -5,6 +5,11 @@ const noop = () => {};
 
 const $ = (selector) => [...document.querySelectorAll(selector)]
 
+const setCache = (path, obj) => {
+  let cache = JSON.stringify(obj)
+  sessionStorage.setItem(path, cache)
+}
+
 const navigate = (e) => {
   e.preventDefault()
 
@@ -17,9 +22,7 @@ const navigate = (e) => {
     current[id] = node.innerHTML
   })
 
-  // setCache(path, obj)
-  let cache = JSON.stringify(current)
-  sessionStorage.setItem(window.location.pathname, cache)
+  setCache(window.location.pathname, current)
 
   // render(pathname)
   let template = JSON.parse(sessionStorage.getItem(pathname))
@@ -59,11 +62,9 @@ const prefetch = async (e) => {
     .then(async arr => {
       let template = arr.filter(obj => obj)[0]
       let main = await template.main(slug)
-      // setCache(path, obj)
-      let cache = JSON.stringify({
+      setCache(pathname, {
         main: main
       })
-      sessionStorage.setItem(pathname, cache)
     })
     .catch(err => new Error(err))
 }
