@@ -5,6 +5,14 @@ const noop = () => {};
 
 const $ = (selector) => [...document.querySelectorAll(selector)]
 
+const render = (path) => {
+  let template = JSON.parse(sessionStorage.getItem(path))
+  for (const region in template) {
+    let nodes = $(`[data-region="${region}"]`)
+    nodes.forEach(node => node.innerHTML = template[region])
+  }
+}
+
 const setCache = (path, obj) => {
   let cache = JSON.stringify(obj)
   sessionStorage.setItem(path, cache)
@@ -24,13 +32,7 @@ const navigate = (e) => {
 
   setCache(window.location.pathname, current)
 
-  // render(pathname)
-  let template = JSON.parse(sessionStorage.getItem(pathname))
-
-  for (const region in template) {
-    let nodes = $(`[data-region="${region}"]`)
-    nodes.forEach(node => node.innerHTML = template[region])
-  }
+  render(pathname)
 
   window.history.pushState(null, null, pathname);
 }
@@ -61,6 +63,7 @@ const prefetch = async (e) => {
   Promise.all(imports)
     .then(async arr => {
       let template = arr.filter(obj => obj)[0]
+      // for ... in on templates at some point
       let main = await template.main(slug)
       setCache(pathname, {
         main: main
@@ -71,13 +74,7 @@ const prefetch = async (e) => {
 
 const popstate = (e) => {
   let pathname = document.location.pathname
-
-  // render(pathname)
-  let template = JSON.parse(sessionStorage.getItem(pathname))
-  for (const region in template) {
-    let nodes = $(`[data-region="${region}"]`)
-    nodes.forEach(node => node.innerHTML = template[region])
-  }
+  render(pathname)
 }
 
 let click = event.listen(document, 'click')
