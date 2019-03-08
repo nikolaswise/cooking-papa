@@ -3,44 +3,85 @@ import { bus } from '/js/bus.js'
 
 const noop = () => {};
 
-var script = document.createElement('script');
-script.type = 'text/javascript';
-script.onload = function() {
-    callFunctionFromScript();
-}
-script.src = 'path/to/your-script.js';
-
-const load = (uri) => {
-  let script = document.createElement('sript')
-  scripte.type = 'module'
-}
+const $ = (selector) => [...document.querySelectorAll(selector)]
 
 const navigate = (e) => {
   e.preventDefault()
-  console.debug('navigate', e)
+
   let pathname = e.target.pathname
+
+  let regions = $('[data-region]')
+  let current = {}
+  regions.forEach(node => {
+    let id = node.getAttribute('data-region')
+    current[id] = node.innerHTML
+  })
+
+  // setCache(path, obj)
+  let cache = JSON.stringify(current)
+  sessionStorage.setItem(window.location.pathname, cache)
+
+  // render(pathname)
+  let template = JSON.parse(sessionStorage.getItem(pathname))
+
+  for (const region in template) {
+    let nodes = $(`[data-region="${region}"]`)
+    nodes.forEach(node => node.innerHTML = template[region])
+  }
+
   window.history.pushState(null, null, pathname);
 }
 
+const getModule = (url) => import(url)
+  .then(mod => mod)
+  .catch(err => console.warn(err))
+
 const prefetch = async (e) => {
   let pathname = e.target.pathname
-  console.log(pathname)
-  // console.log(pathname.split('/').slice(0,-1).join('/'))
-  // let possibillities = [
-  //   `/routes${pathname}index.js`
-  //   `/routes${pathname.split('/').slice(0,-1).join('/')}/:slug.js`,
-  // ]
+  if (sessionStorage.getItem(pathname)) {
+    return
+  }
 
-  // console.log(possibillities)
+  let dir = pathname.split('/').slice(0,-1).join('/')
+  let slug = pathname.split('/').filter(item => item.length > 0).pop()
 
+  let possibillities = [
+    `/routes${pathname}index.js`
+  ]
 
+  dir
+    ? possibillities.push(`/routes${dir}/:slug.js`)
+    : noop()
+
+  let imports = possibillities.map(url => getModule(url))
+
+  Promise.all(imports)
+    .then(async arr => {
+      let template = arr.filter(obj => obj)[0]
+      let main = await template.main(slug)
+      // setCache(path, obj)
+      let cache = JSON.stringify({
+        main: main
+      })
+      sessionStorage.setItem(pathname, cache)
+    })
+    .catch(err => new Error(err))
 }
 
-event.listen(document, 'click')
-event.listen(document, 'mouseover')
+const popstate = (e) => {
+  let pathname = document.location.pathname
 
-event.add('a', 'click', navigate)
-event.add('a', 'mouseover', prefetch)
+  // render(pathname)
+  let template = JSON.parse(sessionStorage.getItem(pathname))
+  for (const region in template) {
+    let nodes = $(`[data-region="${region}"]`)
+    nodes.forEach(node => node.innerHTML = template[region])
+  }
+}
 
-event.remove('.remove-two', console.log)
-event.remove('.remove-one', console.log)
+let click = event.listen(document, 'click')
+let mouseover = event.listen(document, 'mouseover')
+
+click.add('a', navigate)
+mouseover.add('a', prefetch)
+window.onpopstate = popstate

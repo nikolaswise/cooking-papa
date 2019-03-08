@@ -10,7 +10,7 @@ export default (main) => `
   </head>
   <body>
     ${nav}
-    <section class="region-main">
+    <section data-region="main">
       ${main}
     </section>
     <section class="region-foot"></section>
