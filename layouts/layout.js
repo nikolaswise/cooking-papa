@@ -1,4 +1,4 @@
-import nav from '../components/nav.js'
+import nav from '../components/global-nav.js'
 
 export default (main) => `
 <!DOCTYPE html>

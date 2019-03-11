@@ -1,13 +1,21 @@
+import { illo } from '../../components/recipe-illo.js'
+import { recipe } from '../../components/recipe-main.js'
+import back from '../../components/back-nav.js'
+import recipeNav from '../../components/recipe-nav.js'
+
 const template = (object) => (`
-<h1>${object.title}</h1>
-<h2>Ingredients</h2>
-<ul>
-  ${object.ingredients.map(string => `<li>${string}</li>`).join(" ")}
-</ul>
-<h2>Cooking</h2>
-<ol>
-  ${object.steps.map(string => `<li>${string}</li>`).join(" ")}
-</ol>
+<article>
+${back}
+
+<section>
+  ${illo(object)}
+</section
+<section>
+  ${recipe(object)}
+</section
+
+${recipeNav}
+</article>
 `)
 
 const data = (slug, root = '/') => async () => {

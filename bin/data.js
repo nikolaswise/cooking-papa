@@ -19,9 +19,11 @@ const recipeData = (site) => {
   let recipes = site.map(page => {
     return {
       "title": page.title,
+      "date": page.date,
       "slug": page.url.substring(0, page.url.length - 1),
       "ingredients": page.ingredients,
-      "steps": page.steps
+      "steps": page.steps,
+      "content": page.content
     }
   })
   recipes.map(recipe => writeData(recipe))

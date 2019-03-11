@@ -1,17 +1,26 @@
-const item = (object) => (`
-<li>
-  <a href="${object.slug}">${object.title}</a>
-</li>
-`)
+import { featured } from '../components/featured.js'
+import { list } from '../components/list.js'
 
-const template = (array) => (`
+const dateSort = (a, b) => {
+  a = new Date(a.date);
+  b = new Date(b.date);
+  return a>b ? -1 : a<b ? 1 : 0;
+}
+
+const template = (array) => {
+  let recipes = array
+    .filter(obj => obj.ingredients)
+    .sort(dateSort)
+  console.log(recipes)
+  return `
 <h1>Cooking Papa</h1>
-<h2>Not A Food Blog</h2>
-<a class="js-ex" href="#"> Delegated Listener </a>
-<ul>
-  ${array.map(item)}
-</ul>
-`)
+<section>
+  ${featured(recipes.shift())}
+</section>
+<section>
+  ${list(recipes)}
+</section>
+`}
 
 const data = (root = '/') => async () => {
   console.log('rendering!', `${root}data/index.json`)
