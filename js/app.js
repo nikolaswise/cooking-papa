@@ -51,7 +51,8 @@ const prefetch = async (e) => {
   let slug = pathname.split('/').filter(item => item.length > 0).pop()
 
   let possibillities = [
-    `/routes${pathname}index.js`
+    `/routes${pathname}index.js`,
+    `/routes${pathname}.js`
   ]
 
   dir

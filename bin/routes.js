@@ -12,15 +12,15 @@ const render = async (page) => {
   try {
     if (fs.existsSync(`${index}`)) {
       let indexTemplate = require(`${index}`)
-      let indexMain = await indexTemplate.main(`http://localhost:5000/`)
+      let indexMain = await indexTemplate.main(false, `http://localhost:5000/`)
       page.content = layout.default(indexMain)
     }
     // Implement this later when I have one
-    // if (fs.existsSync(`${single}`)) {
-      // let rootTemplate = require(`${single}`)
-      // let id = page.url.substring(0, page.url.length -1)
-      // template(id)
-    // }
+    if (fs.existsSync(`${single}`)) {
+      let rootTemplate = require(`${single}`)
+      let rootMain = await rootTemplate.main(false, `http://localhost:5000/`)
+      page.content = layout.default(rootMain)
+    }
     if (fs.existsSync(`${slug}`)) {
       let id = page.url.split('/').slice(0,-1).pop()
       let slugTemplate = require(`${slug}`)
