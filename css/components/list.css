@@ -1,0 +1,25 @@
+.list {
+  /*margin-top: calc(var(--leading) * 2);*/
+  /*margin-bottom: var(--leading);*/
+}
+
+a.list-link {
+  border-top: 1px solid var(--light-gray);
+  color: var(--gray);
+  padding: var(--leading);
+  display: flex;
+  align-items: center;
+}
+a.list-link:hover {
+  color: var(--gray);
+  background-color: var(--lighter-yellow);
+}
+
+.list-title {
+  flex: 1;
+  margin: 0;
+}
+
+.list-date {
+  font-size: var(--txt-size--2);
+}

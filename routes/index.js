@@ -13,15 +13,9 @@ const template = (array) => {
     .sort(dateSort)
   console.log(recipes)
   return `
-<h1>Cooking Papa</h1>
-<section>
-  <p>qwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmm</p>
-  <p>qwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmm</p>
-</section>
-<section>
+<section class="layout-single">
+  <h1 class="site-title">Cooking Papa</h1>
   ${featured(recipes.shift())}
-</section>
-<section>
   ${list(recipes)}
 </section>
 `}

@@ -1,0 +1,10 @@
+.global-nav {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--txt-size--2);
+  margin-top: calc(var(--baseline) * 6);
+}
+
+.global-nav-link {
+  margin-left: 1em;
+}

@@ -6,6 +6,10 @@ body {
   color: var(--gray);
 }
 
+a {
+  text-decoration: none;
+}
+
 a:visited,
 a {
   color: var(--green);
@@ -17,11 +21,34 @@ a:hover {
 
 /* structure */
 
+.constrained {
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
 .layout-single {
   max-width: 34rem;
   margin: auto;
   padding-left: 7%;
   padding-right: 5%;
+}
+
+.layout-double {
+  margin: auto;
+  padding-left: 7%;
+  padding-right: 7%;
+  display: flex;
+}
+
+.layout-left,
+.layout-right {
+  flex: 1;
+}
+.layout-left {
+  padding-right: 3.5%;
+}
+.layout-right {
+  padding-left: 3.5%;
 }
 
 .lead-1 { margin-top: calc(var(--leading) * 1) }
@@ -30,3 +57,12 @@ a:hover {
 .lead-4 { margin-top: calc(var(--leading) * 4) }
 .lead-5 { margin-top: calc(var(--leading) * 5) }
 .lead-6 { margin-top: calc(var(--leading) * 6) }
+
+.site-title {
+  position: fixed;
+  top: 0;
+  left: 7%;
+  font-size: var(--txt-size--2);
+  margin-top: calc(var(--baseline) * 6);
+  opacity: 0;
+}

@@ -1,0 +1,58 @@
+.recipe {
+  margin-top: calc(var(--leading) * 2);
+  margin-bottom: calc(var(--leading) * 2);
+}
+
+.recipe-title {
+  font-weight: 500;
+  font-size: var(--txt-size-1);
+  margin-bottom: var(--leading);
+}
+
+.recipe-date {
+  display: block;
+  font-size: var(--txt-size--3);
+  margin-bottom: 0;
+}
+
+.recipe-ingredients {
+  max-width: 10em;
+}
+
+.recipe-ingredients-title {
+  font-size: var(--txt-size-0);
+  margin-bottom: calc(var(--baseline) * 4);
+}
+
+.recipe-ingredients-list {
+  margin: 0;
+  padding-left: 0em;
+  list-style-type: none;
+  font-size: var(--txt-size--1);
+  margin-bottom: var(--leading);
+}
+
+.recipe-ingredients-list-item:before {
+  content: '—';
+  padding-right: 0.33em;
+}
+
+.recipe-steps {
+  padding-left: 5em;
+}
+
+.recipe-steps-title {
+  font-size: var(--txt-size-0);
+  margin-bottom: calc(var(--baseline) * 4);
+}
+
+.recipe-steps-list {
+  margin: 0;
+  padding-left: 2em;
+  font-size: var(--txt-size--1);
+  margin-bottom: var(--leading);
+}
+
+.recipe-steps-list-item {
+  margin-bottom: calc(var(--baseline) * 4);
+}

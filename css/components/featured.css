@@ -1,0 +1,22 @@
+.featured {
+  margin-top: calc(var(--leading) * 2);
+  margin-bottom: var(--leading);
+}
+
+a.featured-link {
+  color: var(--gray);
+  padding: var(--leading);
+  display: flex;
+  align-items: center;
+}
+a.featured-link:hover {
+  color: var(--gray);
+  background-color: var(--lighter-yellow);
+}
+
+.featured-title {
+  font-family: GZA;
+  font-size: 4.624em;
+  flex: 1;
+  margin: 0;
+}

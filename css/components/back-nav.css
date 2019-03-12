@@ -1,0 +1,23 @@
+.back-nav {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+  font-size: var(--txt-size-2);
+  margin-top: calc(var(--baseline) * 3.5);
+}
+
+.back-nav-link {
+  margin-left: 1em;
+}
+
+.back-nav-link,
+.back-nav-link:visited {
+  color: var(--black);
+}
+
+.back-nav-link:hover {
+  color: var(--light-gray);
+}

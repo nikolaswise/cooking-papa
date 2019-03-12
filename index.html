@@ -8,35 +8,46 @@
 </head>
 <body>
 
-<nav>
-  <div>
-    <a href="/about">About</a>
-  </div>
+<nav class="global-nav constrained">
+  <a class="global-nav-link" href="/about">About</a>
 </nav>
+
+<link rel="stylesheet" href="/css/components/global-nav.css">
+
 <section data-region="main">
 
-<h1>Cooking Papa</h1>
-<section>
-  <p>qwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmm</p>
-  <p>qwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmm</p>
-</section>
-<section>
+<section class="layout-single">
+  <h1 class="site-title">Cooking Papa</h1>
   
-<a href="/recipes/yuzu-soba">
-  <h2>
-    Yuzu Soba
-  </h2>
-  <date>
-    3/11/19
-  </date>
-</a>
-
-</section>
-<section>
-  
-<div>
-  <a href="/recipes/radichio-coleslaw">Radichio Coleslaw 3/10/19</a>
+<div class="featured">
+  <a class="featured-link" href="/recipes/yuzu-soba">
+    <h2 class="featured-title">
+      Yuzu Soba
+    </h2>
+    <date class="featured-date">
+      3/11/19
+    </date>
+  </a>
 </div>
+
+<link rel="stylesheet" href="/css/components/featured.css">
+
+  
+<div class="list">
+  
+  <a class="list-link" href="/recipes/radichio-coleslaw">
+    <span class="list-title">
+      Radichio Coleslaw
+    </span>
+    <span class="list-date">
+      3/10/19
+    </span>
+  </a>
+
+</div>
+
+<link rel="stylesheet" href="/css/components/list.css">
+
 
 </section>
 

@@ -1,4 +1,8 @@
+import back from '../components/back-nav.js'
+
 const template = (obj) => `
+${back}
+
 <section class="layout-single lead-4">
   ${obj.content}
 </section>

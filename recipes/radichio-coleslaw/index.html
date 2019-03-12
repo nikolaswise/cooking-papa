@@ -8,43 +8,55 @@
 </head>
 <body>
 
-<nav>
-  <div>
-    <a href="/about">About</a>
-  </div>
+<nav class="global-nav constrained">
+  <a class="global-nav-link" href="/about">About</a>
 </nav>
+
+<link rel="stylesheet" href="/css/components/global-nav.css">
+
 <section data-region="main">
 
-<article>
+<article class="layout-double" >
 
-<nav>
-  <a href="/">/index</a>
+<nav class="back-nav">
+  <a class="back-nav-link" href="/">←</a>
 </nav>
 
+<link rel="stylesheet" href="/css/components/back-nav.css">
 
-<section>
+
+<section class="layout-left">
   
-<span>Radichio Coleslaw</span>
+<div class="illo">
+  <span class="illo-text">Radichio Coleslaw</span>
+</div>
 
-</section
-<section>
+<link rel="stylesheet" href="/css/components/illo.css">
+
+</section>
+
+<section class="layout-right">
   
-<h1>Radichio Coleslaw</h1>
-<h2>Ingredients</h2>
-<ul>
-  <li>radichio</li> <li>Red Cabbage</li> <li>Walnuts</li> <li>Mayonaise</li> <li>Lemon</li> <li>Garlic</li> <li>Parmesan</li> <li>Mustard</li> <li>Soy Sauce</li> <li>Fish Sauce</li> <li>Umeboshi</li>
-</ul>
-<h2>Cooking</h2>
-<ol>
-  <li>Slice and mix Radichio and Cabbage, top with sliced walnuts.</li> <li>Mix lemon juice and parmesan.</li> <li>Smash garlic, add with mayonaise to sauce.</li> <li>Add remaining ingredients to sauce to taste.</li>
-</ol>
+<div class="recipe">
+  <date class="recipe-date">3/10/19</date>
+  <h1 class="recipe-title">Radichio Coleslaw</h1>
+  <div class="recipe-ingredients">
+    <h2 class="recipe-ingredients-title">Ingredients</h2>
+    <ul class="recipe-ingredients-list">
+      <li class="recipe-ingredients-list-item">radichio</li> <li class="recipe-ingredients-list-item">Red Cabbage</li> <li class="recipe-ingredients-list-item">Walnuts</li> <li class="recipe-ingredients-list-item">Mayonaise</li> <li class="recipe-ingredients-list-item">Lemon</li> <li class="recipe-ingredients-list-item">Garlic</li> <li class="recipe-ingredients-list-item">Parmesan</li> <li class="recipe-ingredients-list-item">Mustard</li> <li class="recipe-ingredients-list-item">Soy Sauce</li> <li class="recipe-ingredients-list-item">Fish Sauce</li> <li class="recipe-ingredients-list-item">Umeboshi</li>
+    </ul>
+  </div>
+  <div class="recipe-steps">
+    <h2 class="recipe-steps-title">Cooking</h2>
+    <ol class="recipe-steps-list">
+      <li class="recipe-steps-list-item">Slice and mix Radichio and Cabbage, top with sliced walnuts.</li> <li class="recipe-steps-list-item">Mix lemon juice and parmesan.</li> <li class="recipe-steps-list-item">Smash garlic, add with mayonaise to sauce.</li> <li class="recipe-steps-list-item">Add remaining ingredients to sauce to taste.</li>
+    </ol>
+  </div>
+</div>
 
-</section
+<link rel="stylesheet" href="/css/components/recipe.css">
 
-
-<nav>
-  swipe left and right and shit for more
-</nav>
+</section>
 
 </article>
 

@@ -1,0 +1,22 @@
+.illo {
+  position: fixed;
+  background-color: var(--yellow);
+  display: block;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.illo-text {
+  font-size: 17vw;
+  text-align: center;
+  font-family: GZA;
+  line-height: 0.8;
+  word-wrap: anywhere;
+}

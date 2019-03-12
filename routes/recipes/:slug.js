@@ -4,17 +4,17 @@ import back from '../../components/back-nav.js'
 import recipeNav from '../../components/recipe-nav.js'
 
 const template = (object) => (`
-<article>
+<article class="layout-double" >
 ${back}
 
-<section>
+<section class="layout-left">
   ${illo(object)}
-</section
-<section>
-  ${recipe(object)}
-</section
+</section>
 
-${recipeNav}
+<section class="layout-right">
+  ${recipe(object)}
+</section>
+
 </article>
 `)
 
