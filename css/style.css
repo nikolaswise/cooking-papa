@@ -1,9 +1,32 @@
+@import './type.css';
+@import './color.css';
+
 body {
-  background-color: #1B2B34;
-  color: #8F9396;
+  background-color: var(--white);
+  color: var(--gray);
 }
 
 a:visited,
 a {
-  color: #99C794;
+  color: var(--green);
 }
+a:hover {
+  color: var(--dark-yellow);
+}
+
+
+/* structure */
+
+.layout-single {
+  max-width: 34rem;
+  margin: auto;
+  padding-left: 7%;
+  padding-right: 5%;
+}
+
+.lead-1 { margin-top: calc(var(--leading) * 1) }
+.lead-2 { margin-top: calc(var(--leading) * 2) }
+.lead-3 { margin-top: calc(var(--leading) * 3) }
+.lead-4 { margin-top: calc(var(--leading) * 4) }
+.lead-5 { margin-top: calc(var(--leading) * 5) }
+.lead-6 { margin-top: calc(var(--leading) * 6) }

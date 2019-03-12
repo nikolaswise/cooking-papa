@@ -1,5 +1,5 @@
 const template = (obj) => `
-<section>
+<section class="layout-single lead-4">
   ${obj.content}
 </section>
 `

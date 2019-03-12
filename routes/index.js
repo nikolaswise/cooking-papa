@@ -15,6 +15,10 @@ const template = (array) => {
   return `
 <h1>Cooking Papa</h1>
 <section>
+  <p>qwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmm</p>
+  <p>qwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmmqwertyuiopasdfghjklzxcvbnmm</p>
+</section>
+<section>
   ${featured(recipes.shift())}
 </section>
 <section>

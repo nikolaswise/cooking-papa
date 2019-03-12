@@ -1,0 +1,132 @@
+/* Family Declarations */
+
+@font-face {
+  font-family: GZA;
+  font-style: normal;
+  src: url('/fonts/gza-seminegra-web-p.woff2') format('woff2'),
+    url('/fonts/gza-seminegra-web-p.woff') format('woff');
+}
+
+@font-face {
+  font-family: GZA;
+  font-style: italic;
+  src: url('/fonts/gza-seminegraitalic-web-p.woff2') format('woff2'),
+    url('/fonts/gza-seminegraitalic-web-p.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quattro';
+  src: url('/fonts/iAWriterQuattroS-Regular.woff2') format('woff2'),
+    url('/fonts/iAWriterQuattroS-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Quattro';
+  src: url('/fonts/iAWriterQuattroS-Italic.woff2') format('woff2'),
+    url('/fonts/iAWriterQuattroS-Italic.woff') format('woff');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Quattro';
+  src: url('/fonts/iAWriterQuattroS-Bold.woff2') format('woff2'),
+    url('/fonts/iAWriterQuattroS-Bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Quattro';
+  src: url('/fonts/iAWriterQuattroS-BoldItalic.woff2') format('woff2'),
+    url('/fonts/iAWriterQuattroS-BoldItalic.woff') format('woff');
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*
+Type Sizes: Major Second;
+2.281rem
+2.027rem
+1.802rem
+1.602rem
+1.424rem
+1.266rem
+1.125rem
+1rem
+0.889rem
+0.79rem
+0.702rem
+0.624rem
+*/
+
+:root{
+  --txt-size-7: 2.281rem;
+  --txt-size-6: 2.027rem;
+  --txt-size-5: 1.802rem;
+  --txt-size-4: 1.602rem;
+  --txt-size-3: 1.424rem;
+  --txt-size-2: 1.266rem;
+  --txt-size-1: 1.125rem;
+  --txt-size-0: 1rem;
+  --txt-size--1: 0.889rem;
+  --txt-size--2: 0.79rem;
+  --txt-size--3: 0.702rem;
+  --txt-size--4: 0.624rem;
+}
+
+/* Base type styles */
+/*
+  base font size;    21px
+  base lineheight;   30px
+  common denominator: 3px
+  fontsize:         7*3px
+  lineheight:      10*3px
+*/
+
+:root{
+  --baseline: 0.1428rem;
+  --font-size: 21px;
+  --lineheight: calc(30/21);
+  --leading: calc(30/21 * 1rem);
+}
+
+html {
+  font-size: calc(70.2% + 1vw);
+}
+@media (min-width: 600px) {
+  /*html{ font-size: calc(100% + 0.5vw); }*/
+}
+
+body {
+  font-family: 'Quattro', monospace;
+  font-weight: normal;
+  font-style: normal;
+  font-size: var(--txt-size-0);
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  line-height: var(--lineheight);
+  letter-spacing: 0.015em;
+  word-spacing: 0.001em;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: var(--leading);
+}
+
+.txt-size-7 { font-size: var(--txt-size-7); }
+.txt-size-6 { font-size: var(--txt-size-6); }
+.txt-size-5 { font-size: var(--txt-size-5); }
+.txt-size-4 { font-size: var(--txt-size-4); }
+.txt-size-3 { font-size: var(--txt-size-3); }
+.txt-size-2 { font-size: var(--txt-size-2); }
+.txt-size-1 { font-size: var(--txt-size-1); }
+.txt-size-0 { font-size: var(--txt-size-0); }
+.txt-size--1 { font-size: var(--txt-size--1); }
+.txt-size--2 { font-size: var(--txt-size--2); }
+.txt-size--3 { font-size: var(--txt-size--3); }
+.txt-size--4 { font-size: var(--txt-size--4); }
