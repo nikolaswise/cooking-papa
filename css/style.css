@@ -12,7 +12,7 @@ a {
 
 a:visited,
 a {
-  color: var(--green);
+  color: var(--gray);
 }
 a:hover {
   color: var(--dark-yellow);

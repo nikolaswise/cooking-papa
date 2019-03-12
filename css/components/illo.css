@@ -19,4 +19,5 @@
   font-family: GZA;
   line-height: 0.8;
   word-wrap: anywhere;
+  word-break: break-word;
 }

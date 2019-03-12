@@ -11,9 +11,8 @@ const item = (object) => (`
 
 export const list = (array) => `
 <div class="list">
-  ${array.map(item)}
+  ${array.map(item).join('')}
 </div>
 
 <link rel="stylesheet" href="/css/components/list.css">
-
 `
